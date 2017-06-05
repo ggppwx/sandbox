@@ -1,0 +1,561 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"meta",
+				"metadata"
+			],
+			[
+				"report",
+				"reportspec_xml"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 446.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"switch ",
+				"Emacs Pro Essentials - Switch To View"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"keyb",
+				"Preferences: Key Bindings"
+			],
+			[
+				"pack remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings"
+			],
+			[
+				"boxy",
+				"Boxy Theme: Activation"
+			],
+			[
+				"canca",
+				"SFTP: Cancel Upload"
+			],
+			[
+				"package in",
+				"Package Control: Install Package"
+			],
+			[
+				"cancl",
+				"SFTP: Cancel Upload"
+			],
+			[
+				"git",
+				"Package Control: Install Package"
+			],
+			[
+				"cancel",
+				"SFTP: Cancel Upload"
+			],
+			[
+				"package con ad",
+				"Package Control: Add Repository"
+			]
+		],
+		"width": 736.0
+	},
+	"console":
+	{
+		"height": 162.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler({\"http\":\"http://proxy.bloomberg.com:81\"})) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/jgu45/src/sandbox/startbootstrap-agency-gh-pages"
+	],
+	"file_history":
+	[
+		"/C/Users/jgu45/src/precog/src/xq/modules/precog/layout/singleportfolio.xq",
+		"/C/Users/jgu45/src/precog/src/xq/modules/precog/package.xq",
+		"/C/Users/jgu45/src/precog/src/xq/modules/utils/p2ft/templatelist.xq",
+		"/C/Users/jgu45/src/precog/src/py/service/util/package.py",
+		"/C/Users/jgu45/src/precog/src/py/service/precog/precog_config.py",
+		"/C/Users/jgu45/src/precog/src/py/service/Makefile",
+		"/C/Users/jgu45/src/precog/src/py/service/precog/requestprocessor.py",
+		"/C/Users/jgu45/src/precog/src/py/service/resource/prepareReport_comp.xml",
+		"/C/Users/jgu45/src/precog/src/py/service/processor/PortReport.py",
+		"/C/Users/jgu45/src/precog/src/py/service/tests/test_PortReport.py",
+		"/C/Users/jgu45/src/precog/src/py/service/xquery/generate_maxlevel_map.xq",
+		"/C/Users/jgu45/src/precog/src/py/service/tests/test_buildfilename.py",
+		"/C/Users/jgu45/src/precog/src/xq/modules/precog/layout/marketstructure.xq",
+		"/C/Users/jgu45/src/precog/src/py/service/xquery/generate_reportspecification_actions.xq",
+		"/C/Users/jgu45/src/precog/src/py/service/precog/precog_config.ini",
+		"/C/Users/jgu45/src/precog/src/py/service/precog_data/template/basic_report_spec_template.xml",
+		"/C/Users/jgu45/src/precog/src/py/service/precog_data/template/msr_report_spec_template.xml",
+		"/C/Users/jgu45/AppData/Roaming/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+		"/C/Users/jgu45/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/C/Users/jgu45/src/precog/src/py/service/xquery/hp.xq",
+		"/C/Users/jgu45/src/precog/src/py/service/setup.py",
+		"/C/Users/jgu45/src/precog/src/py/service/precog_data/reportxmlspec.xml",
+		"/C/Users/jgu45/src/precog/src/py/service/precog_data/basic_report_spec_template.xml",
+		"/C/Users/jgu45/src/precog/src/py/service/resource/portReportRequest.xml",
+		"/C/Users/jgu45/AppData/Roaming/Sublime Text 3/Packages/Emacs Pro Essentials/Default.sublime-keymap",
+		"/C/Users/jgu45/src/precog/sftp-config.json",
+		"/C/Users/jgu45/src/examples/requests/Makefile",
+		"/C/Users/jgu45/src/examples/requests/appveyor.yml",
+		"/C/Users/jgu45/src/examples/requests/.gitignore",
+		"/C/Users/jgu45/src/examples/requests/.travis.yml",
+		"/C/Users/jgu45/src/precog/src/py/service/bas/precog.cfg.tmpl",
+		"/C/Users/jgu45/src/precog/src/py/service/precog/main.py",
+		"/C/Users/jgu45/src/precog/src/py/service/util/zorba2.py",
+		"/C/Users/jgu45/src/precog/src/py/service/processor/PrepareReport.py",
+		"/C/Users/jgu45/src/precog/Makefile",
+		"/C/Users/jgu45/src/precog/src/py/service/bas/precog_cfg.xq",
+		"/C/Users/jgu45/src/precog/src/py/service/bas/precog.xsd",
+		"/C/Users/jgu45/src/precog/src/py/service/tests/test_requestprocessor.py",
+		"/C/Users/jgu45/src/precog/src/py/service/resource/xmlRequest/hello.xml",
+		"/C/Users/jgu45/src/precog/src/py/service/bas/piers_alinris_base_shrink.xsd",
+		"/C/Users/jgu45/src/precog/src/py/service/xmlRequest/addexec.xml",
+		"/C/Users/jgu45/src/precog/src/py/service/pytest.ini",
+		"/C/Users/jgu45/src/precog/sftp-config-alt.json"
+	],
+	"find":
+	{
+		"height": 30.0
+	},
+	"find_in_files":
+	{
+		"height": 117.0,
+		"where_history":
+		[
+			"*.py",
+			"test_*.py",
+			"*.xq",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"metadataxml",
+			"title",
+			"filename",
+			"instanceId",
+			"componet",
+			"classified",
+			"get_spectre_template",
+			"class Requests",
+			"request",
+			"true",
+			"precog_cfg.xq"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"component"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 130.0
+	},
+	"output.sftp":
+	{
+		"height": 130.0
+	},
+	"pinned_build_system": "",
+	"project": "web.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"temp.py",
+				"src\\py\\service\\util\\temp.py"
+			],
+			[
+				"_p",
+				"src\\py\\service\\processor\\_processor.py"
+			],
+			[
+				"packa",
+				"src\\py\\service\\util\\package.py"
+			],
+			[
+				"prep",
+				"src\\py\\service\\processor\\PrepareReport.py"
+			],
+			[
+				"por",
+				"src\\py\\service\\processor\\PortReport.py"
+			],
+			[
+				"gen",
+				"src\\py\\service\\xquery\\generate_reportspecification_actions.xq"
+			],
+			[
+				"genp",
+				"src\\xq\\modules\\utils\\prepi\\genpi.xq"
+			],
+			[
+				"pack",
+				"src\\xq\\modules\\precog\\package.xq"
+			],
+			[
+				"main",
+				"src\\xq\\modules\\precog\\layout\\main.xq"
+			],
+			[
+				"templ",
+				"src\\xq\\modules\\utils\\p2ft\\templatelist.xq"
+			],
+			[
+				"reque",
+				"src\\py\\service\\precog\\requestprocessor.py"
+			],
+			[
+				"_pro",
+				"src\\py\\service\\processor\\_processor.py"
+			],
+			[
+				"port",
+				"src\\py\\service\\processor\\PortReport.py"
+			],
+			[
+				"make",
+				"src\\py\\service\\Makefile"
+			],
+			[
+				"hp",
+				"src\\py\\service\\xquery\\hp.xq"
+			],
+			[
+				"hp.",
+				"src\\py\\service\\xquery\\hp.xq"
+			],
+			[
+				"",
+				"src\\py\\service\\xquery\\generate_reportspecification_actions.xq"
+			],
+			[
+				"preppcon",
+				"src\\xq\\modules\\utils\\prep\\portcontext.xq"
+			],
+			[
+				"preparereport",
+				"src\\py\\service\\resource\\prepareReport_comp.xml"
+			],
+			[
+				"test_pre",
+				"src\\py\\service\\tests\\test_PrepareReport.py"
+			],
+			[
+				"mar",
+				"src\\xq\\modules\\precog\\layout\\marketstructure.xq"
+			],
+			[
+				"mark",
+				"src\\xq\\modules\\precog\\layout\\marketstructure.xq"
+			],
+			[
+				"single",
+				"src\\xq\\modules\\precog\\layout\\singleportfolio.xq"
+			],
+			[
+				"main.",
+				"src\\xq\\modules\\precog\\layout\\main.xq"
+			],
+			[
+				"package",
+				"src\\py\\service\\util\\package.py"
+			],
+			[
+				"precog.ini",
+				"src\\py\\service\\precog\\precog_config.ini"
+			],
+			[
+				"basic",
+				"src\\py\\service\\precog_data\\template\\basic_report_spec_template.xml"
+			],
+			[
+				"setup",
+				"src\\py\\service\\setup.py"
+			],
+			[
+				"report",
+				"src\\py\\service\\precog_data\\reportxmlspec.xml"
+			],
+			[
+				"reportxmls",
+				"src\\py\\service\\precog_data\\reportxmlspec.xml"
+			],
+			[
+				"portreport",
+				"src\\py\\service\\resource\\portReportRequest.xml"
+			],
+			[
+				"test_port",
+				"src\\py\\service\\tests\\test_PortReport.py"
+			],
+			[
+				"precog.py",
+				"src\\py\\service\\precog\\precog_config.py"
+			],
+			[
+				"prepare",
+				"src\\py\\service\\processor\\PrepareReport.py"
+			],
+			[
+				"singlepo",
+				"src\\xq\\modules\\precog\\layout\\singleportfolio.xq"
+			],
+			[
+				"main.xq",
+				"src\\xq\\modules\\precog\\layout\\main.xq"
+			],
+			[
+				"portre",
+				"src\\py\\service\\processor\\PortReport.py"
+			],
+			[
+				"api.py",
+				"requests\\requests\\api.py"
+			],
+			[
+				"main.py",
+				"precog\\src\\py\\service\\precog\\main.py"
+			],
+			[
+				"requestproc",
+				"precog\\src\\py\\service\\precog\\requestprocessor.py"
+			],
+			[
+				"precog/",
+				"precog\\Makefile"
+			],
+			[
+				".gi",
+				"requests\\.gitignore"
+			],
+			[
+				"makef",
+				"src\\py\\service\\Makefile"
+			],
+			[
+				"maek",
+				"Makefile"
+			],
+			[
+				"po",
+				"src\\py\\service\\processor\\PortReport.py"
+			],
+			[
+				"gener",
+				"src\\py\\service\\xquery\\generate_reportspecification_actions.xq"
+			],
+			[
+				"precocfg.",
+				"src\\py\\service\\bas\\precog_cfg.xq"
+			],
+			[
+				"precog_c",
+				"src\\py\\service\\precog\\precog_config.py"
+			],
+			[
+				"precog.xq",
+				"src\\py\\service\\bas\\precog_cfg.xq"
+			],
+			[
+				"zorba2",
+				"src\\py\\service\\util\\zorba2.py"
+			],
+			[
+				"config.py",
+				"src\\py\\service\\precog\\precog_config.py"
+			],
+			[
+				"zorba2.",
+				"src\\py\\service\\util\\zorba2.py"
+			],
+			[
+				"genmax",
+				"src\\py\\service\\xquery\\generate_maxlevel_map.xq"
+			],
+			[
+				"test_po",
+				"src\\py\\service\\tests\\test_PortReport.py"
+			],
+			[
+				"precog.cf",
+				"src\\py\\service\\bas\\precog.cfg.tmpl"
+			],
+			[
+				"test_req",
+				"src\\py\\service\\tests\\test_requestprocessor.py"
+			],
+			[
+				"hell",
+				"src\\py\\service\\resource\\xmlRequest\\hello.xml"
+			],
+			[
+				"piers_alin",
+				"src\\py\\service\\bas\\piers_alinris_base_shrink.xsd"
+			],
+			[
+				"precog",
+				"src\\py\\service\\bas\\precog.xsd"
+			],
+			[
+				"setup.",
+				"src\\py\\service\\setup.py"
+			],
+			[
+				"generate_",
+				"src\\py\\service\\xquery\\generate_reportspecification_actions.xq"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 625.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\jgu45\\src\\examples\\requests\\requestproj.sublime-project"
+			],
+			[
+				"lsho",
+				"C:\\Users\\jgu45\\src\\lshost\\lshost.sublime-project"
+			],
+			[
+				"ls",
+				"C:\\Users\\jgu45\\src\\lshost\\lshost.sublime-project"
+			],
+			[
+				"request",
+				"C:\\Users\\jgu45\\src\\examples\\requests\\requestproj.sublime-project"
+			]
+		],
+		"width": 475.0
+	},
+	"select_symbol":
+	{
+		"height": 446.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"server",
+				"Server"
+			]
+		],
+		"width": 908.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 386.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
