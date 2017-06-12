@@ -24,7 +24,30 @@ class TestALL(unittest.TestCase):
         self._solution = p39.Solution()
         self.assertEqual(self._solution.combinationSum([2, 3, 6, 7], 7), [[7], [2,2,3]])
 
-        
+
+
+
+    # greedy
+    def test_p455(self):
+        pass
+
+
+    def test_p55(self):
+        pass
+
+
+    # sorting
+    def test_p56(self):
+        pass
+
+    def test_p324(self):
+        pass
+
+
+
+
+
+    
 def main():
     unittest.main()
 
