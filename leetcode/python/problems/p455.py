@@ -30,3 +30,18 @@ class Solution(object):
         :type s: List[int]
         :rtype: int
         """
+        g.sort()
+        s.sort()
+        result = 0
+
+        for greed in g:
+
+            while len(s) != 0:
+                current_greed = s.pop(0) # pop the first 
+                if current_greed >= greed:
+                    result += 1
+                    break
+                
+
+
+        return result

@@ -1,7 +1,7 @@
 import unittest
 from problems import *
 
-class TestALL(unittest.TestCase):
+class TestAll(unittest.TestCase):
     def setUp(self):
         pass
 
@@ -26,10 +26,12 @@ class TestALL(unittest.TestCase):
 
 
 
-
     # greedy
     def test_p455(self):
-        pass
+        # easy please read the problem carefully
+        # python array pop 
+        self._solution = p455.Solution()
+        print self._solution.findContentChildren([1,2], [1,2,3])
 
 
     def test_p55(self):
