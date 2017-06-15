@@ -11,6 +11,21 @@ For example, given n = 3, a solution set is:
   "()()()"
 ]
 """
+_test = [
+    (
+        3,        
+        [
+            "((()))",
+            "(()())",
+            "(())()",
+            "()(())",
+            "()()()"
+        ]
+    )
+
+
+]
+
 class Solution(object):
     def generateParenthesis(self, n):
         """
@@ -34,3 +49,8 @@ class Solution(object):
         result = []
         generate('', n, n, result)
         return result
+
+
+
+    def run(self, n):
+        return self.generateParenthesis(n)

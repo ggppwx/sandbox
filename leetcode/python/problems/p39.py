@@ -15,6 +15,17 @@ A solution set is:
 Subscribe to see which companies asked this question.
 """
 
+_test = [
+    (
+        [[2, 3, 6, 7],7],
+        [            
+            [2, 2, 3],
+            [7]
+        ]          
+    )
+
+]
+
 class Solution(object):
     def combinationSum(self, candidates, target):
         """
@@ -45,3 +56,11 @@ class Solution(object):
         candidates = sorted(candidates) #need sorting 
         dfs(0, [], candidates, target)
         return self._result
+
+
+    def run(self, args):
+        candidates = args[0]
+        target = args[1]
+        print candidates
+        print target
+        return self.combinationSum(candidates, target)

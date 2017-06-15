@@ -22,7 +22,12 @@ Explanation: You have 2 children and 3 cookies. The greed factors of 2 children 
 You have 3 cookies and their sizes are big enough to gratify all of the children, 
 You need to output 2.
 '''
-
+_test = [
+    (
+        [[1,2], [1,2,3]],
+        2
+    )
+]
 class Solution(object):
     def findContentChildren(self, g, s):
         """
@@ -40,8 +45,11 @@ class Solution(object):
                 current_greed = s.pop(0) # pop the first 
                 if current_greed >= greed:
                     result += 1
-                    break
-                
-
+                    break                
 
         return result
+
+
+    def run(self, args):
+        return self.findContentChildren(args[0], args[1])
+    
