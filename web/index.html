@@ -12,12 +12,17 @@
 <body>
 
 <h1>My First Heading</h1>
-<p>My first paragraph.</p>
 
-
+<div id="header" class="form-group">
+    <label>header</label>
+    <input type="text" name="header" value="input">
+</div>
 <div id="editor">
 	<div>hello world</div>
+</div>
 
+<div class="row">
+    <button class="btn btn-primary" type="submit">Save</button>
 </div>
 
 <!-- Main Quill library -->
@@ -44,6 +49,15 @@
 	  placeholder: 'Compose an epic...',
 	  theme: 'snow'  // or 'bubble'
   });
+  quill.once('text-change', function(delta, oldDelta, source) {
+      if (source == 'api') {
+        console.log("An API call triggered this change.");
+      } else if (source == 'user') {
+        console.log("A user action triggered this change.");
+      }
+	});
+
+
 </script>
 
 </body>
