@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+updateTime();
+
 
 $("#btn-start").click(function() {
 
@@ -7,11 +9,41 @@ $("#btn-start").click(function() {
 	console.log(interval);
 
 	chrome.runtime.sendMessage({ "timer": "start", "interval": interval}, function(response) {
-		console.log('------------');
-
-
+		updateTime();
 	});
 
 });
+
+$("#btn-stop").click(function() {
+	chrome.runtime.sendMessage({ "timer": "stop"}, function(response) {
+		updateTime();
+	});
+
+});
+
+function updateTime() {
+	chrome.runtime.sendMessage({ "timer": "timestamp"}, function(response) {
+		if (response && response.status == "OK"){
+			let timestamp = response.timestamp;
+			if (timestamp) {
+				$("#span-timestamp").text(new Date(timestamp).toTimeString());	
+				let elapse = response.elapse/(60 * 1000);
+				let interval = response.interval; 	
+				let progress = elapse* 100/interval;
+				$("#span-elapse").text(elapse);
+				$("#span-interval").text(interval);
+				$("#progressbar").attr("value", progress);	
+			} else {
+				$("#span-timestamp").text("");	
+				$("#span-elapse").text(0);
+				$("#span-interval").text("");
+				$("#progressbar").attr("value", 0);	
+			}
+		}
+
+	});
+
+}
+
 
 });

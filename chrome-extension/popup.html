@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html>
+  <head>
+  </head>
   <body style="width: 300px">
-  	  <p>set the alarm</p>
+  	  <h1>set the alarm</h1>
+  	  <div>
+  	  	<p>starts at <span id="span-timestamp">sometime</span></p>
+  	  	<p>elapse: <span id="span-elapse"></span></p>
+  	  	<p>interval: <span id="span-interval"></span></p>
+  	  	<p></p>
+  	  		<div>
+  	  			<progress id="progressbar" value="0" max="100"></progress>  	  			
+  	  		</div>
+  	  	</p>
+  	  </div>
   	  <div>
   	  	<input type="number" id="entry-interval" value="5">
   	  	<button id="btn-start">start</button>
+  	  	<button id="btn-stop">stop</button>
   	  </div>
   	  <script src="jquery-3.2.1.min.js"></script>
   	  <script type="text/javascript" src="popup.js"></script>
