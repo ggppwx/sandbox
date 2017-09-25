@@ -4,20 +4,35 @@ var INTERVAL = undefined;
 var POPUP_WINDOW_ID = undefined;
 
 
+function startTimer(interval) {
+	console.log('func::startTimer');
+	if (interval == undefined &&  INTERVAL == undefined) { 
+		//exception
+		throw { name: "ERROR"};
+	}
+
+	if (interval == undefined && INTERVAL) {
+		interval = INTERVAL;
+	}
+
+	chrome.alarms.clear('job', function() {
+		chrome.alarms.create('job', {
+    		delayInMinutes: interval
+		});
+		TIMESTAMP = Date.now();
+		INTERVAL = interval;
+	});
+
+
+}
+
 chrome.runtime.onMessage.addListener(
 	function(request, sender, sendResponse) { 
 
 	if (request.timer == "start") {
 		let interval = request.interval;
-		console.log('START THE TIMER: ' + interval);
-		// clar all alarm 
-		chrome.alarms.clear('job', function() {
-			chrome.alarms.create('job', {
-        		periodInMinutes: interval
-    		});
-    		TIMESTAMP = Date.now();
-    		INTERVAL = interval;
-		});
+		console.log('START THE TIMER: ' + interval);		
+		startTimer(interval)
 		sendResponse({status : 'OK'});
 
 	} else if (request.timer == "timestamp") {
@@ -44,6 +59,7 @@ chrome.runtime.onMessage.addListener(
 chrome.windows.onRemoved.addListener(function (id) {
 	if (id == POPUP_WINDOW_ID) {
 		console.log('popup closed');
+		startTimer();
 		POPUP_WINDOW_ID = undefined;
 	}
 });
@@ -53,6 +69,8 @@ chrome.windows.onRemoved.addListener(function (id) {
 chrome.alarms.onAlarm.addListener(function(alarm) {
     if (alarm.name === 'job') {
     	if (POPUP_WINDOW_ID == undefined) {
+    		console.log('popup opened');
+    		// popup open 
 	   		chrome.windows.create({
 				url: "alert.html",
 				focused: true,
@@ -60,7 +78,7 @@ chrome.alarms.onAlarm.addListener(function(alarm) {
 				state: "maximized"
 			}, function(window) {
 				POPUP_WINDOW_ID = window.id;
-				TIMESTAMP = Date.now();
+				
 			});
    		} else {
    			chrome.notifications.create('nofi-id', 
@@ -71,14 +89,10 @@ chrome.alarms.onAlarm.addListener(function(alarm) {
    				message : "pls close popup"
    			});
 
-   		}
-   			
+   		}   			
 
     }
 });
-
-
-
 
 
 
