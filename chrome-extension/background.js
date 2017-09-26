@@ -26,6 +26,46 @@ function startTimer(interval) {
 
 }
 
+function completeTimer() {
+	console.log('popup opened');
+	// popup open 
+	chrome.windows.create({
+		url: "alert.html",
+		focused: true,
+		type: "popup",
+		state: "maximized"
+	}, function(window) {
+		POPUP_WINDOW_ID = window.id;		
+	});
+
+	// save the task 
+	let now = new Date();
+	let key = now.toISOString().slice(0,10);
+
+	chrome.storage.sync.get(key, function(records) {
+    // Notify that we saved.
+	    console.log('current status for date ' + key);
+	    console.log(records);
+
+	    // construct new records 
+	    let record = {
+	    	start: TIMESTAMP,
+	    	interval: INTERVAL
+	    }
+	    records.push(record);
+	    chrome.storage.sync.set({
+	    	[key] : records
+	    }, function () {
+	    	console.log('key saved');
+	    });
+
+
+  	});
+
+
+}
+
+
 chrome.runtime.onMessage.addListener(
 	function(request, sender, sendResponse) { 
 
@@ -51,6 +91,10 @@ chrome.runtime.onMessage.addListener(
     		INTERVAL = undefined;
 		});
 		sendResponse({status : 'OK'});
+	} else if (request.statistic) {
+
+
+
 	}
 	
 });
@@ -69,17 +113,7 @@ chrome.windows.onRemoved.addListener(function (id) {
 chrome.alarms.onAlarm.addListener(function(alarm) {
     if (alarm.name === 'job') {
     	if (POPUP_WINDOW_ID == undefined) {
-    		console.log('popup opened');
-    		// popup open 
-	   		chrome.windows.create({
-				url: "alert.html",
-				focused: true,
-				type: "popup",
-				state: "maximized"
-			}, function(window) {
-				POPUP_WINDOW_ID = window.id;
-				
-			});
+    		completeTimer();
    		} else {
    			chrome.notifications.create('nofi-id', 
    			{
