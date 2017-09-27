@@ -3,6 +3,7 @@ $(document).ready(function() {
 updateTime();
 
 
+
 $("#btn-start").click(function() {
 
 	let interval = parseInt($("#entry-interval").val());
@@ -22,7 +23,7 @@ $("#btn-stop").click(function() {
 });
 
 function updateTime() {
-	chrome.runtime.sendMessage({ "timer": "timestamp"}, function(response) {
+	chrome.runtime.sendMessage({ "timer": "timestamp"}, {}, function(response) {
 		if (response && response.status == "OK"){
 			let timestamp = response.timestamp;
 			if (timestamp) {

@@ -1,20 +1,18 @@
 $( document ).ready(function() {
 
 
-	// play alarm 
-	$("#alarm").trigger('play');
-	setInterval(function() {
-		$("#alarm").trigger('play');
-		window.focus();
-	}, 1000 * 60 * 5);
 
+	$("#btn-rest").click(function() {
+		chrome.runtime.sendMessage({ "timer": "rest"}, function(response) {
+		});
+	});
 
 
 	// retrieveing data 
 	chrome.runtime.sendMessage({ "statistic": "today"}, function(response) {
 		if (response && response.status == "OK"){
-			let timestamp = response.timestamp;
-
+			let result = response.result;
+			$("#span-totalTime").text(result.totalTime);
 		}
 	});
 
