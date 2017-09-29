@@ -16,11 +16,24 @@ function restTimer(period) {
 	chrome.alarms.create('alert', {
 		periodInMinutes: period
 	});
+}
+
+
+function miniPopup() {
 	if (POPUP_WINDOW_ID){
 		chrome.windows.update(POPUP_WINDOW_ID, {
 			focused: false, 
 			state: "minimized"
 		});	
+	}
+}
+
+
+function closePopup() {
+	if (POPUP_WINDOW_ID) {
+		chrome.windows.remove(POPUP_WINDOW_ID, function() {
+			POPUP_WINDOW_ID = undefined;
+		});
 	}
 }
 
@@ -92,12 +105,11 @@ function completeTimer() {
 }
 
 
-chrome.runtime.onMessage.addListener(
-	function(request, sender, sendResponse) { 
-
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) { 
 	if (request.timer == "start") {
 		let interval = request.interval;
 		console.log('START THE TIMER: ' + interval);		
+		closePopup();
 		startTimer(interval)
 		sendResponse({status : 'OK'});
 
@@ -118,24 +130,35 @@ chrome.runtime.onMessage.addListener(
     		TIMESTAMP = undefined;
     		INTERVAL = undefined;
 		});
+		closePopup();
 		sendResponse({status : 'OK'});
 	} 
 	else if (request.timer == "rest" ) {
 		console.log('REST THE ALARM');
 		restTimer(5);
+		miniPopup();
+		sendResponse({status : 'OK'});
 	} 
+	else if (request.timer == "continue") {
+		console.log('CONTINUE THE ALARM');
+		startTimer();
+		closePopup();
+		sendResponse({status : 'OK'});
+	}
 	else if (request.statistic == 'today') {
 		console.log('GET STAT TODAY');
 		let now = new Date();
 		let key = now.toISOString().slice(0,10);
 		chrome.storage.sync.get(key, function(records) {
-			let result = {totalTime : 0};
+			let result = {totalTime : 0 , records : []};
 			if (Array.isArray(records[key])) {
-				for (var i = 0; i < records[key].length; i++) {
-					console.log(records[key][i]);
-					let interval = records[key][i].interval;
-					let timestamp = records[key][i].timestamp;
+				for (var i = 0; i < records[key].length; i++) {					
+					let record = records[key][i]
+					console.log(record);
+					let interval = record.interval;
+					let timestamp = record.timestamp;
 					if(interval){
+						result.records.push(record);
 						result.totalTime = result.totalTime + interval;
 					}
 
@@ -158,8 +181,6 @@ chrome.windows.onRemoved.addListener(function (id) {
 		chrome.alarms.clear('alert', function() {
 			console.log('alert alarm cleared');
 		});
-		startTimer();
-		
 	}
 });
 
