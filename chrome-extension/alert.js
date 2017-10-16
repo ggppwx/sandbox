@@ -15,31 +15,31 @@ $( document ).ready(function() {
 
 
 	// chart 
-function plotTimeline(records) {
-  var container = document.getElementById('chart-timeline');
+	function plotTimeline(records) {
+	  var container = document.getElementById('chart-timeline');
 
-  // Create a DataSet (allows two way data-binding)
-  	let data = []
-    for (var i = 0; i < records.length; i++) {
-      	let startTimestamp = records[i].start;
-      	let endTimestamp = startTimestamp + records[i].interval * 60 * 1000;
-      	data.push({ 
-      		id: i, 
-      		content: '', 
-      		start: new Date(startTimestamp), 
-      		end: new Date(endTimestamp) 
-      	});
-      		
-      }
+	  // Create a DataSet (allows two way data-binding)
+	  	let data = []
+	    for (var i = 0; i < records.length; i++) {
+	      	let startTimestamp = records[i].start;
+	      	let endTimestamp = startTimestamp + records[i].interval * 60 * 1000;
+	      	data.push({ 
+	      		id: i, 
+	      		content: '', 
+	      		start: new Date(startTimestamp), 
+	      		end: new Date(endTimestamp) 
+	      	});
+	      		
+	      }
 
-  var items = new vis.DataSet(data);
+	  var items = new vis.DataSet(data);
 
-  // Configuration for the Timeline
-  var options = {};
-  // Create a Timeline
-  var timeline = new vis.Timeline(container, items, options);
+	  // Configuration for the Timeline
+	  var options = {};
+	  // Create a Timeline
+	  var timeline = new vis.Timeline(container, items, options);
 
-}
+	}
 
 
 	// retrieveing data 
