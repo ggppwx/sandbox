@@ -60,6 +60,13 @@ function startTimer(interval) {
 
 }
 
+function stopTimer() {
+	chrome.alarms.clear('job', function() {
+		TIMESTAMP = undefined;
+		INTERVAL = undefined;
+	});	
+}
+
 function completeTimer() {
 	// save the task 
 	let now = new Date();
@@ -126,10 +133,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 	} 
 	else if (request.timer == "stop") {
 		console.log('STOP THE TIMER');
-		chrome.alarms.clear('job', function() {
-    		TIMESTAMP = undefined;
-    		INTERVAL = undefined;
-		});
+
+		stopTimer();
 		closePopup();
 		sendResponse({status : 'OK'});
 	} 
@@ -176,6 +181,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 chrome.windows.onRemoved.addListener(function (id) {
 	if (id == POPUP_WINDOW_ID) {
 		console.log('popup closed');
+
+		// stop
+		stopTimer();
+
 		// clear alarm 
 		POPUP_WINDOW_ID = undefined;
 		chrome.alarms.clear('alert', function() {

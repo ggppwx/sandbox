@@ -44,6 +44,16 @@ function updateTime() {
 
 	});
 
+
+
+	chrome.runtime.sendMessage({ "statistic": "today"}, function(response) {
+		if (response && response.status == "OK"){
+			let result = response.result;
+			$("#span-totalTime").text(result.totalTime);
+
+		}
+	});
+
 }
 
 
