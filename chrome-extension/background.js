@@ -172,7 +172,30 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 			sendResponse({status : 'OK', result : result});
 		});
 		return true;
-	} 
+	}
+
+	if (request.clock) {
+
+		// open a window 
+		chrome.windows.create({
+			url: "alert.html",
+			focused: true,
+			type: "popup"
+		}, function(window) {
+
+		});
+
+
+
+
+
+
+		sendResponse({status : 'OK'});
+	}
+
+
+
+
 	return false;
 
 });

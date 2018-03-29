@@ -22,6 +22,12 @@ $("#btn-stop").click(function() {
 
 });
 
+
+$("#btn-clock").click(function() {
+
+	
+});
+
 function updateTime() {
 	chrome.runtime.sendMessage({ "timer": "timestamp"}, {}, function(response) {
 		if (response && response.status == "OK"){
